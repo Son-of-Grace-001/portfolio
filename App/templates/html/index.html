@@ -12,7 +12,7 @@
   <header>
     <nav>
       <div class="logo-div">
-        <a href="/"><img src="{% static 'image/logo.svg' %}" alt="logo"></a>
+        <a href="/"><img src="{% static 'image/Logo.svg' %}" alt="logo"></a>
       </div>
 
       <div id="nav-list" class="nav-list">
@@ -31,8 +31,8 @@
         </button>
        </a>
       </div>
-      <img id="menu" src="{% static 'image/Group 7.svg' %}" alt="hamburger menu">
-      <img id="close" src="{% static 'image/Group 8.svg' %}" alt="hamburger menu">
+      <img id="menu" src="{% static 'image/menu_FILL0_wght400_GRAD0_opsz24.svg' %}" alt="hamburger menu">
+      <img id="close" src="{% static 'image/close_FILL0_wght400_GRAD0_opsz24.svg' %}" alt="hamburger menu">
     </nav>
   </header>
 
@@ -48,9 +48,18 @@
           seamlessly. Whether it's designing intuitive user interfaces or creating eye-catching visual elements, my aim is
           to make products that delight users and solve real-world problems.
         </h4>
-        <button class="get">
-          Get in touch
-        </button>
+        <div class="btn-flex">
+          <a href="#contact-id">
+          <button class="get">
+            Get in touch
+          </button>
+        </a>
+        <a href="https://github.com/Son-of-Grace-001/" target="_blank">
+          <button class="btn">
+            Github
+          </button>
+        </a>
+        </div>
       </div>
       <div class="img-div">
         <img class="top-img" src="{%static 'image/Group 11.png' %}" alt="profile pic">
@@ -150,7 +159,7 @@
     <footer class="footer">
       <section class="footer1">
         <div class="logo-cont">
-          <a href="/"><img src="{% static 'image/logo.svg' %}" alt="logo"></a>
+          <a href="/"><img src="{% static 'image/Logo.svg' %}" alt="logo"></a>
         </div>
   
         <div class="footer-list">

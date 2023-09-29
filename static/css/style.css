@@ -132,6 +132,11 @@ span{
   padding-top: 80px;
 }
 
+.btn-flex{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* styling the class skill section */
 .skill{
   padding: 40px;
