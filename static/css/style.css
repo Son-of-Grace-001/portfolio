@@ -134,7 +134,7 @@ span{
 
 .btn-flex{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 /* styling the class skill section */
