@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-div">
+        <a href="/"><img src="{% static 'image/logo.svg' %}" alt="logo"></a>
+      </div>
+
+      <div id="nav-list" class="nav-list">
+        <ul class="nav-options">
+          <li><a href="/">Home</a></li>
+          <li class="li"><a href="#portfolio-id">portfolio</a></li>
+          <li class="li"><a href="#about-id">About me</a></li>
+          <li id="li" class="li"><a href="#contact-id">contact me</a></li>
+        </ul>
+      </div>
+
+      <div class="btn-div">
+       <a href="#contact-id">
+        <button class="btn">
+          contact me
+        </button>
+       </a>
+      </div>
+      <img id="menu" src="{% static 'image/Group 7.svg' %}" alt="hamburger menu">
+      <img id="close" src="{% static 'image/Group 8.svg' %}" alt="hamburger menu">
+    </nav>
+  </header>
+
+  <main>
+    <section class="top">
+      <div class="info-div">
+        <h4 class="hey">Hey, I am Stephen Olajire</h4>
+        <h2 class="create">I am a <span>product designer</span> and a <span>web developer</span></h2>
+        <h4 class="lorem">
+          I am a passionate individual who thrives at the intersection of design and technology.
+          As a product designer and web developer, I bring a unique blend of creativity and technical expertise to my work.
+          In my role as a product designer, I craft user-centric experiences that not only look beautiful but also function 
+          seamlessly. Whether it's designing intuitive user interfaces or creating eye-catching visual elements, my aim is
+          to make products that delight users and solve real-world problems.
+        </h4>
+        <button class="get">
+          Get in touch
+        </button>
+      </div>
+      <div class="img-div">
+        <img class="top-img" src="{%static 'image/Group 11.png' %}" alt="profile pic">
+      </div>
+    </section>
+    <section class="skill">
+      <h4 class="my-skill">my skill</h4>
+      <h1 class="my">my expertise</h1>
+      <div class="grid">
+        {% for skills in skill %}
+        <div class="bg">
+          <h3 class="technology">{{skills.lang}}</h3>
+          <div class="wrap">
+            <p class="ppp">{{skills.description}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="about-section" id="about-id">
+      <div class="about-grid">
+        <div class="about-div">
+          <img class="about-img" src="{%static 'image/About Me.png'%}" alt="about me image">
+        </div>
+        {% for abouts in about %}
+        <div class="about-info">
+          <div>
+            <h4 class="about-me">about me</h4>
+            <h1 class="about">about me</h1>
+          </div>
+          <p>{{abouts.about_me}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="portfolio" id="portfolio-id">
+      <h1 class="port-title">My portfolio</h1>
+      <div class="port-grid">
+          {% for portfolio_item in portfolio %}
+          <div class="port-card">
+             <div class="img-cont">
+              <img src="{{ portfolio_item.img.url }}" alt="project image">
+             </div>
+              <div class="join">
+                <h3 class="pro-title">Name: {{ portfolio_item.project_name }}</h3>
+                <p class="pro-desc">{{ portfolio_item.project_description }}</p></p>
+              </div>
+              <div class="join">
+                <h3 class="link1">Source Code link:</h3>
+                <p class="link11">{{portfolio_item.project_source_link }}</p>
+              </div>
+              <div class="join">
+                <h3 class="link2">Live Code link:</h3>
+                <p class="link22">{{ portfolio_item.project_link_code }}</p>
+              </div>
+              <div class="join">
+                <h3 class="type">Project type: {{ portfolio_item.project_type }}</h3>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+    </section> 
+    <section id="contact-id" class="contact-section">
+      <h1 class="send-msg">contact me</h1>
+      <div class="form-lenght">
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="name-grid">
+           <div>
+              <label class="fff" for="name">FirstName</label> <br>
+              <input name="firstname" type="text" placeholder="enter your firstname">
+            </div>
+            <div>
+              <label class="fff" for="lname">LastName</label> <br>
+              <input name="lastname" type="text" placeholder="enter your lasttname">
+            </div>
+          </div>
+          <div class="number-grid">
+           <div>
+              <label class="fff" for="email">Email</label> <br>
+              <input name="email" type="email" placeholder="enter your email"> 
+            </div>
+            <div>
+              <label class="fff" for="email">phone number</label> <br>
+              <input name="phone" type="tel" placeholder="enter your phone number">
+            </div>
+          </div>
+          <label class="fff" for="message">message</label> <br>
+          <textarea name="message" id="text" cols="30" rows="10" placeholder="enter message"></textarea>
+
+          <div class="btn-divv">
+            <button class="submit" type="submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>  
+    </section> 
+    <footer class="footer">
+      <section class="footer1">
+        <div class="logo-cont">
+          <a href="/"><img src="{% static 'image/logo.svg' %}" alt="logo"></a>
+        </div>
+  
+        <div class="footer-list">
+          <ul class="footer-ul">
+            <li><a href="/">Home</a></li>
+            <li class="li"><a href="#portfolio-id">portfolio</a></li>
+            <li class="li"><a href="#about-id">About me</a></li>
+            <li class="li"><a href="#contact-id">contact me</a></li>
+          </ul>
+        </div>
+  
+        <div class="btn-cont">
+          <a href="https://web.facebook.com/profile.php?id=100070659156927" target="_blank"><img class="social" src="{% static 'image/Facebook.png' %}" alt="facebook image"></a>
+          <a href="https://twitter.com/Horlharmighty1" target="_blank"><img class="social" src="{% static 'image/Twitter.png' %}" alt="twitter image"></a>
+          <a href=""><img class="social" src="{% static 'image/Instagram.png' %}" alt="instagram image"></a>
+        </div>
+
+      </section>
+      <hr class="line">
+      <section class="footer2">
+        <div class="footer2-grid">
+          <div>
+            <p class="made">made by Stephen</p>
+          </div>
+          <div class="inner-grid">
+            <p>privacy policy</p>
+            <p>terms of service</p>
+            <p>copyright &copy; 2023</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </main>
+</body>
+
+<script src="{% static 'js/index.js' %}"></script>
+</html>
