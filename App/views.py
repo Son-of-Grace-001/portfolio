@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.conf import settings
+from django.core.mail import send_mail
+
 
 def home(request):
   if request.method == 'POST':
