@@ -5,6 +5,12 @@
 }
 
 /* styling the nav element */
+.h33{
+  text-align: center;
+  color: rgb(113, 195, 113);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 nav{
   display: flex;
   flex-direction: row;
